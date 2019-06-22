@@ -1,0 +1,32 @@
+ {% extends 'blog/base.html' %}
+ {% load static %}
+
+
+        {% block content %}
+
+        <div class="content container">
+        <div class="row">
+        <div class="col-md-8">
+           
+            {% for post in posts %}
+                <div class="post">
+                    <div class="date">
+                        <br>
+                        <br>
+                        <p>published: {{ post.published_date }}</p>
+
+
+                        <tr class="danger">
+                            <td><a href="#"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>Like</button></a>/</td>
+                        </tr>
+                    </div>
+                    <h2><a href="">{{ post.title }}</a></h2>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+
+            {% endfor %}
+            </div>
+            </div>
+            </div>
+            {% endblock %}
+            
